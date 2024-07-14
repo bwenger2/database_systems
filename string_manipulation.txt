@@ -1,0 +1,421 @@
+SQL> CREATE TABLE homework1data (
+  2   name VARCHAR2(30),
+  3   address VARCHAR2(30),
+  4   location VARCHAR2(30),
+  5   zip VARCHAR2(10));
+CREATE TABLE homework1data (
+             *
+ERROR at line 1:
+ORA-00955: name is already used by an existing object 
+
+
+SQL> -----------------------------------------
+SQL> INSERT INTO Homework1Data
+  2  (Name, Address, Location, Zip)
+  3  VALUES
+  4  ('Ferguson, Shawn M.', '1940 Fountainview Court', 'Reynoldsburg, Ohio', '43068');
+
+1 row created.
+
+SQL> INSERT INTO Homework1Data
+  2  (Name, Address, Location, Zip)
+  3  VALUES
+  4  ('Phillips, George', '19 Pleasant St.', 'Columbus, OH', '43231');
+
+1 row created.
+
+SQL> INSERT INTO Homework1Data
+  2  (Name, Address, Location, Zip)
+  3  VALUES
+  4  ('Thompson, Mary', '200 E. Main St.', 'Columbus, Oh', '43215');
+
+1 row created.
+
+SQL> INSERT INTO Homework1Data
+  2  (Name, Address, Location, Zip)
+  3  VALUES
+  4  ('Swatson, Robert', '584 Yellowstone Dr.', 'Westerville, OH', '43081');
+
+1 row created.
+
+SQL> INSERT INTO Homework1Data
+  2  (Name, Address, Location, Zip)
+  3  VALUES
+  4  ('Banks, Heather T.', '19 Pleasant St.', 'Columbus, Ohio', '43231');
+
+1 row created.
+
+SQL> drop table homework1data;
+
+Table dropped.
+
+SQL> clear screen
+
+SQL> CREATE TABLE homework1data (
+  2   name VARCHAR2(30),
+  3   address VARCHAR2(30),
+  4   location VARCHAR2(30),
+  5   zip VARCHAR2(10));
+
+Table created.
+
+SQL> -----------------------------------------
+SQL> INSERT INTO Homework1Data
+  2  (Name, Address, Location, Zip)
+  3  VALUES
+  4  ('Ferguson, Shawn M.', '1940 Fountainview Court', 'Reynoldsburg, Ohio', '43068');
+
+1 row created.
+
+SQL> INSERT INTO Homework1Data
+  2  (Name, Address, Location, Zip)
+  3  VALUES
+  4  ('Phillips, George', '19 Pleasant St.', 'Columbus, OH', '43231');
+
+1 row created.
+
+SQL> INSERT INTO Homework1Data
+  2  (Name, Address, Location, Zip)
+  3  VALUES
+  4  ('Thompson, Mary', '200 E. Main St.', 'Columbus, Oh', '43215');
+
+1 row created.
+
+SQL> INSERT INTO Homework1Data
+  2  (Name, Address, Location, Zip)
+  3  VALUES
+  4  ('Swatson, Robert', '584 Yellowstone Dr.', 'Westerville, OH', '43081');
+
+1 row created.
+
+SQL> INSERT INTO Homework1Data
+  2  (Name, Address, Location, Zip)
+  3  VALUES
+  4  ('Banks, Heather T.', '19 Pleasant St.', 'Columbus, Ohio', '43231');
+
+1 row created.
+
+SQL> desc homework1data
+ Name                                      Null?    Type
+ ----------------------------------------- -------- ----------------------------
+ NAME                                               VARCHAR2(30)
+ ADDRESS                                            VARCHAR2(30)
+ LOCATION                                           VARCHAR2(30)
+ ZIP                                                VARCHAR2(10)
+
+SQL> select * from homework1data;
+
+NAME                           ADDRESS                                          
+------------------------------ ------------------------------                   
+LOCATION                       ZIP                                              
+------------------------------ ----------                                       
+Ferguson, Shawn M.             1940 Fountainview Court                          
+Reynoldsburg, Ohio             43068                                            
+                                                                                
+Phillips, George               19 Pleasant St.                                  
+Columbus, OH                   43231                                            
+                                                                                
+Thompson, Mary                 200 E. Main St.                                  
+Columbus, Oh                   43215                                            
+                                                                                
+
+NAME                           ADDRESS                                          
+------------------------------ ------------------------------                   
+LOCATION                       ZIP                                              
+------------------------------ ----------                                       
+Swatson, Robert                584 Yellowstone Dr.                              
+Westerville, OH                43081                                            
+                                                                                
+Banks, Heather T.              19 Pleasant St.                                  
+Columbus, Ohio                 43231                                            
+                                                                                
+
+SQL> set linesize 100
+SQL> select * from homework1data;
+
+NAME                           ADDRESS                        LOCATION                              
+------------------------------ ------------------------------ ------------------------------        
+ZIP                                                                                                 
+----------                                                                                          
+Ferguson, Shawn M.             1940 Fountainview Court        Reynoldsburg, Ohio                    
+43068                                                                                               
+                                                                                                    
+Phillips, George               19 Pleasant St.                Columbus, OH                          
+43231                                                                                               
+                                                                                                    
+Thompson, Mary                 200 E. Main St.                Columbus, Oh                          
+43215                                                                                               
+                                                                                                    
+
+NAME                           ADDRESS                        LOCATION                              
+------------------------------ ------------------------------ ------------------------------        
+ZIP                                                                                                 
+----------                                                                                          
+Swatson, Robert                584 Yellowstone Dr.            Westerville, OH                       
+43081                                                                                               
+                                                                                                    
+Banks, Heather T.              19 Pleasant St.                Columbus, Ohio                        
+43231                                                                                               
+                                                                                                    
+
+SQL> set linesize 150
+SQL> select * from homework1data;
+
+NAME                           ADDRESS                        LOCATION                       ZIP                                                      
+------------------------------ ------------------------------ ------------------------------ ----------                                               
+Ferguson, Shawn M.             1940 Fountainview Court        Reynoldsburg, Ohio             43068                                                    
+Phillips, George               19 Pleasant St.                Columbus, OH                   43231                                                    
+Thompson, Mary                 200 E. Main St.                Columbus, Oh                   43215                                                    
+Swatson, Robert                584 Yellowstone Dr.            Westerville, OH                43081                                                    
+Banks, Heather T.              19 Pleasant St.                Columbus, Ohio                 43231                                                    
+
+SQL> clear screen
+
+SQL> desc user_tables
+ Name                                                                                Null?    Type
+ ----------------------------------------------------------------------------------- -------- --------------------------------------------------------
+ TABLE_NAME                                                                          NOT NULL VARCHAR2(30)
+ TABLESPACE_NAME                                                                              VARCHAR2(30)
+ CLUSTER_NAME                                                                                 VARCHAR2(30)
+ IOT_NAME                                                                                     VARCHAR2(30)
+ STATUS                                                                                       VARCHAR2(8)
+ PCT_FREE                                                                                     NUMBER
+ PCT_USED                                                                                     NUMBER
+ INI_TRANS                                                                                    NUMBER
+ MAX_TRANS                                                                                    NUMBER
+ INITIAL_EXTENT                                                                               NUMBER
+ NEXT_EXTENT                                                                                  NUMBER
+ MIN_EXTENTS                                                                                  NUMBER
+ MAX_EXTENTS                                                                                  NUMBER
+ PCT_INCREASE                                                                                 NUMBER
+ FREELISTS                                                                                    NUMBER
+ FREELIST_GROUPS                                                                              NUMBER
+ LOGGING                                                                                      VARCHAR2(3)
+ BACKED_UP                                                                                    VARCHAR2(1)
+ NUM_ROWS                                                                                     NUMBER
+ BLOCKS                                                                                       NUMBER
+ EMPTY_BLOCKS                                                                                 NUMBER
+ AVG_SPACE                                                                                    NUMBER
+ CHAIN_CNT                                                                                    NUMBER
+ AVG_ROW_LEN                                                                                  NUMBER
+ AVG_SPACE_FREELIST_BLOCKS                                                                    NUMBER
+ NUM_FREELIST_BLOCKS                                                                          NUMBER
+ DEGREE                                                                                       VARCHAR2(10)
+ INSTANCES                                                                                    VARCHAR2(10)
+ CACHE                                                                                        VARCHAR2(5)
+ TABLE_LOCK                                                                                   VARCHAR2(8)
+ SAMPLE_SIZE                                                                                  NUMBER
+ LAST_ANALYZED                                                                                DATE
+ PARTITIONED                                                                                  VARCHAR2(3)
+ IOT_TYPE                                                                                     VARCHAR2(12)
+ TEMPORARY                                                                                    VARCHAR2(1)
+ SECONDARY                                                                                    VARCHAR2(1)
+ NESTED                                                                                       VARCHAR2(3)
+ BUFFER_POOL                                                                                  VARCHAR2(7)
+ FLASH_CACHE                                                                                  VARCHAR2(7)
+ CELL_FLASH_CACHE                                                                             VARCHAR2(7)
+ ROW_MOVEMENT                                                                                 VARCHAR2(8)
+ GLOBAL_STATS                                                                                 VARCHAR2(3)
+ USER_STATS                                                                                   VARCHAR2(3)
+ DURATION                                                                                     VARCHAR2(15)
+ SKIP_CORRUPT                                                                                 VARCHAR2(8)
+ MONITORING                                                                                   VARCHAR2(3)
+ CLUSTER_OWNER                                                                                VARCHAR2(30)
+ DEPENDENCIES                                                                                 VARCHAR2(8)
+ COMPRESSION                                                                                  VARCHAR2(8)
+ COMPRESS_FOR                                                                                 VARCHAR2(12)
+ DROPPED                                                                                      VARCHAR2(3)
+ READ_ONLY                                                                                    VARCHAR2(3)
+ SEGMENT_CREATED                                                                              VARCHAR2(3)
+ RESULT_CACHE                                                                                 VARCHAR2(7)
+
+SQL> select table_name from user_tables;
+
+TABLE_NAME                                                                                                                                            
+------------------------------                                                                                                                        
+GRADES                                                                                                                                                
+LAB1EX                                                                                                                                                
+CON_TEST                                                                                                                                              
+TESTTABLE                                                                                                                                             
+DATETEST                                                                                                                                              
+TEST                                                                                                                                                  
+AUTOMOBILEDRIVER                                                                                                                                      
+TSHIRT                                                                                                                                                
+TRUCK                                                                                                                                                 
+AUTOMOBILE                                                                                                                                            
+SALES                                                                                                                                                 
+
+TABLE_NAME                                                                                                                                            
+------------------------------                                                                                                                        
+GRAD                                                                                                                                                  
+PERSON3                                                                                                                                               
+PERSON2                                                                                                                                               
+PICTURE                                                                                                                                               
+VACATION                                                                                                                                              
+CONTEST                                                                                                                                               
+HUMAN                                                                                                                                                 
+STATE                                                                                                                                                 
+CAR                                                                                                                                                   
+PERSONCAR                                                                                                                                             
+T4                                                                                                                                                    
+
+TABLE_NAME                                                                                                                                            
+------------------------------                                                                                                                        
+T5                                                                                                                                                    
+SAMPLE                                                                                                                                                
+HOMEWORK1DATA                                                                                                                                         
+CATEGORY                                                                                                                                              
+SPORT                                                                                                                                                 
+
+27 rows selected.
+
+SQL> select * from datetest;
+
+        ID DATETIMEF                                                                                                                                  
+---------- ---------                                                                                                                                  
+         1 30-MAR-15                                                                                                                                  
+         2 30-MAR-15                                                                                                                                  
+         3 30-MAR-15                                                                                                                                  
+         3 30-MAR-15                                                                                                                                  
+
+SQL> desc datetest
+ Name                                                                                Null?    Type
+ ----------------------------------------------------------------------------------- -------- --------------------------------------------------------
+ ID                                                                                           NUMBER
+ DATETIMEFIELD                                                                                DATE
+
+SQL> select id, to_char(datetimefield, 'mm/dd/yyyy hh:mi pm') as date from datetest;
+select id, to_char(datetimefield, 'mm/dd/yyyy hh:mi pm') as date from datetest
+                                                            *
+ERROR at line 1:
+ORA-00923: FROM keyword not found where expected 
+
+
+SQL> select id, to_char(datetimefield, 'mm/dd/yyyy hh:mi pm') as datefield from datetest;
+
+        ID DATEFIELD                                                                                                                                  
+---------- -------------------                                                                                                                        
+         1 03/30/2015 08:28 pm                                                                                                                        
+         2 03/30/2015 08:28 pm                                                                                                                        
+         3 03/30/2015 08:28 pm                                                                                                                        
+         3 03/30/2015 08:28 pm                                                                                                                        
+
+SQL> update datetest set datefield = to_date('2015-10-24 2:00 PM', 'yyyy-mm-dd HH:mi PM');
+update datetest set datefield = to_date('2015-10-24 2:00 PM', 'yyyy-mm-dd HH:mi PM')
+                    *
+ERROR at line 1:
+ORA-00904: "DATEFIELD": invalid identifier 
+
+
+SQL> update datetest set datefield = to_date('2015-10-24 2:00 PM', 'yyyy-mm-dd HH:mi PM');
+update datetest set datefield = to_date('2015-10-24 2:00 PM', 'yyyy-mm-dd HH:mi PM')
+                    *
+ERROR at line 1:
+ORA-00904: "DATEFIELD": invalid identifier 
+
+
+SQL> edit
+Wrote file afiedt.buf
+
+  1* update datetest set datefield = to_date('2015-10-24 2:00 PM', 'yyyy-mm-dd HH:mi PM')
+SQL> 
+SQL> 
+SQL> clear screen
+
+SQL> update datetest
+  2  set datefield = (to_date('2015-10-24 2:00 PM', 'yyyy-mm-dd HH:mi PM'));
+set datefield = (to_date('2015-10-24 2:00 PM', 'yyyy-mm-dd HH:mi PM'))
+    *
+ERROR at line 2:
+ORA-00904: "DATEFIELD": invalid identifier 
+
+
+SQL> desc datetest
+ Name                                                                                Null?    Type
+ ----------------------------------------------------------------------------------- -------- --------------------------------------------------------
+ ID                                                                                           NUMBER
+ DATETIMEFIELD                                                                                DATE
+
+SQL> update datetest
+  2  set datetimefield = (to_date('2015-10-24 2:00 PM', 'yyyy-mm-dd HH:mi PM'));
+
+4 rows updated.
+
+SQL> 
+SQL> update datetest
+  2  set datetimefield = to_date('2015-10-24 2:00 PM', 'yyyy-mm-dd HH:mi PM');
+
+4 rows updated.
+
+SQL> 
+SQL> 
+SQL> select * from datetest;
+
+        ID DATETIMEF                                                                                                                                  
+---------- ---------                                                                                                                                  
+         1 24-OCT-15                                                                                                                                  
+         2 24-OCT-15                                                                                                                                  
+         3 24-OCT-15                                                                                                                                  
+         3 24-OCT-15                                                                                                                                  
+
+SQL> select id, to_char(datetimefield, 'mm/dd/yyyy hh:mi pm') as datefield from datetest;
+
+        ID DATEFIELD                                                                                                                                  
+---------- -------------------                                                                                                                        
+         1 10/24/2015 02:00 pm                                                                                                                        
+         2 10/24/2015 02:00 pm                                                                                                                        
+         3 10/24/2015 02:00 pm                                                                                                                        
+         3 10/24/2015 02:00 pm                                                                                                                        
+
+SQL> select id, to_char(datetimefield, 'mm/dd/yyyy') as dateonly, to_char(datetimefield, 'HH:mi am') as timeonly from  datetest;
+
+        ID DATEONLY   TIMEONLY                                                                                                                        
+---------- ---------- --------                                                                                                                        
+         1 10/24/2015 02:00 pm                                                                                                                        
+         2 10/24/2015 02:00 pm                                                                                                                        
+         3 10/24/2015 02:00 pm                                                                                                                        
+         3 10/24/2015 02:00 pm                                                                                                                        
+
+SQL> clear screen
+
+SQL> select * from homework1data;
+
+NAME                           ADDRESS                        LOCATION                       ZIP                                                      
+------------------------------ ------------------------------ ------------------------------ ----------                                               
+Ferguson, Shawn M.             1940 Fountainview Court        Reynoldsburg, Ohio             43068                                                    
+Phillips, George               19 Pleasant St.                Columbus, OH                   43231                                                    
+Thompson, Mary                 200 E. Main St.                Columbus, Oh                   43215                                                    
+Swatson, Robert                584 Yellowstone Dr.            Westerville, OH                43081                                                    
+Banks, Heather T.              19 Pleasant St.                Columbus, Ohio                 43231                                                    
+
+SQL> select length(zip) from homework1data;
+
+LENGTH(ZIP)                                                                                                                                           
+-----------                                                                                                                                           
+          5                                                                                                                                           
+          5                                                                                                                                           
+          5                                                                                                                                           
+          5                                                                                                                                           
+          5                                                                                                                                           
+
+SQL> select length(name) from homework1data;
+
+LENGTH(NAME)                                                                                                                                          
+------------                                                                                                                                          
+          18                                                                                                                                          
+          16                                                                                                                                          
+          14                                                                                                                                          
+          15                                                                                                                                          
+          17                                                                                                                                          
+
+SQL> select length(address) from homework1data;
+
+LENGTH(ADDRESS)                                                                                                                                       
+---------------                                                                                                                                       
+             23                                                                                                                                       
+             15                                                                                                                                       
+             15                                                                                                                                       
+             19                                                                                                                                       
+             15                                                                                                                                       
+
+SQL> spool off
